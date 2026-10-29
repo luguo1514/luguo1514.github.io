@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<article class="article">
+  <h1 class="title small">{{ page.title }}</h1>
+  <div class="a-meta">
+    <span class="date">{{ page.date | date: "%Y-%m-%d" }}</span>
+    {% for t in page.tags %}<span class="tag">{{ t }}</span>{% endfor %}
+  </div>
+  <div class="post-body">
+    {{ content }}
+  </div>
+  <a class="back" href="{{ site.baseurl }}/blog.html">← 返回随笔</a>
+</article>

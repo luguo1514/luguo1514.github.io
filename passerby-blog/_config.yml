@@ -1,0 +1,26 @@
+# ============================================================
+# 「不起眼的路过」Jekyll 站点配置
+# 部署到 GitHub Pages 时，只需改下面这两处：
+#   1. url  → 填你的地址，如 https://你的用户名.github.io
+#   2. 如果仓库名不是「用户名.github.io」，还要改 baseurl
+# 其余不用动。
+# ============================================================
+title: 不起眼的路过
+description: 一个路过的人，随手记下的一些安排、作品与想法。
+url: ""            # 部署后改成 https://你的用户名.github.io
+baseurl: ""        # 仓库名是「用户名.github.io」时保持空字符串
+lang: zh-CN
+timezone: Asia/Shanghai
+
+# 构建设置
+markdown: kramdown
+exclude:
+  - README.md
+  - "*.png"
+
+# 所有页面默认用 default 布局（含页头页脚）
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default

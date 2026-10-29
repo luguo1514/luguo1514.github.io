@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<section class="hero">
+  <h1 class="title small">作品</h1>
+  <p class="tagline">做过的、在做的东西。加作品：编辑 <code>_data/works.yml</code>。</p>
+</section>
+<section class="block" style="border-top:none;padding-top:6px">
+  <div class="grid2">
+    {% for w in site.data.works %}
+    <a class="card work-card" {% if w.link %}href="{{ w.link }}" target="_blank" rel="noopener"{% endif %}>
+      <div class="w-title">{{ w.title }}</div>
+      <div class="w-desc">{{ w.desc }}</div>
+      <div class="w-status">{{ w.status }}</div>
+    </a>
+    {% endfor %}
+  </div>
+</section>

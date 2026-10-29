@@ -1,0 +1,42 @@
+---
+layout: default
+---
+<section class="hero">
+  <span class="seal big">路过</span>
+  <h1 class="title">{{ site.title }}</h1>
+  <p class="tagline">{{ site.description }}</p>
+</section>
+
+<section class="block">
+  <div class="block-head"><h2>关于我</h2><a class="more" href="{{ site.baseurl }}/about.html">更多 →</a></div>
+  <div class="about-text">
+    <p>你好，我是翁同学。</p>
+    <p>电气自动化出身，做过银行客户经理，现在在沉淀自己、做自己的事。这里放我的作品与想法。</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="block-head"><h2>成果展示</h2><a class="more" href="{{ site.baseurl }}/works.html">全部 →</a></div>
+  <div class="grid2">
+    {% for w in site.data.works limit:2 %}
+    <a class="card work-card" {% if w.link %}href="{{ w.link }}" target="_blank" rel="noopener"{% endif %}>
+      <div class="w-title">{{ w.title }}</div>
+      <div class="w-desc">{{ w.desc }}</div>
+      <div class="w-status">{{ w.status }}</div>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="block">
+  <div class="block-head"><h2>最新随笔</h2><a class="more" href="{{ site.baseurl }}/blog.html">全部 →</a></div>
+  {% for post in site.posts limit:3 %}
+  <a class="note-row" href="{{ post.url | relative_url }}">
+    <div class="top"><span class="date">{{ post.date | date: "%Y-%m-%d" }}</span></div>
+    <div class="c-title">{{ post.title }}</div>
+    {% if post.excerpt %}<div class="c-ex">{{ post.excerpt | strip_html | truncate: 60 }}</div>{% endif %}
+  </a>
+  {% else %}
+  <div class="empty">还没有随笔。</div>
+  {% endfor %}
+</section>

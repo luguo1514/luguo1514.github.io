@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<section class="hero">
+  <h1 class="title small">随笔</h1>
+  <p class="tagline">想法、随笔、技巧——存下来的碎片。</p>
+</section>
+<section class="block" style="border-top:none;padding-top:6px">
+  {% for post in site.posts %}
+  <a class="note-row" href="{{ post.url | relative_url }}">
+    <div class="top"><span class="date">{{ post.date | date: "%Y-%m-%d" }}</span>{% for t in post.tags %}<span class="tag">{{ t }}</span>{% endfor %}</div>
+    <div class="c-title">{{ post.title }}</div>
+    {% if post.excerpt %}<div class="c-ex">{{ post.excerpt | strip_html | truncate: 60 }}</div>{% endif %}
+  </a>
+  {% else %}
+  <div class="empty">还没有随笔。</div>
+  {% endfor %}
+</section>
